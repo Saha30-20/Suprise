@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>❤️</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Ambient canvas: particles / hearts / petals live here across the whole site -->
+<canvas id="ambient-canvas"></canvas>
+
+<!-- ============================= -->
+<!-- 1. LOCKED LANDING PAGE        -->
+<!-- ============================= -->
+<section id="landing" class="screen locked">
+  <div class="glow-orb orb-a"></div>
+  <div class="glow-orb orb-b"></div>
+
+  <div class="landing-content">
+    <p class="eyebrow reveal-line" data-delay="0">for someone who means more than words</p>
+    <h1 class="landing-title reveal-line" data-delay="1">I Made Something<br />For You&hellip;</h1>
+    <p class="landing-sub reveal-line" data-delay="2">A little surprise for someone who means more than words can explain.</p>
+    <p class="landing-ready reveal-line" data-delay="3">Are you ready?</p>
+
+    <button id="open-surprise" class="glass-btn reveal-line" data-delay="4">
+      <span>Open Your Surprise</span>
+      <span class="spark">✨</span>
+    </button>
+  </div>
+
+  <div class="scroll-lock-hint reveal-line" data-delay="5">a secret little world made just for you</div>
+</section>
+
+<!-- ============================= -->
+<!-- 2. PIN SCREEN                 -->
+<!-- ============================= -->
+<section id="pin-screen" class="screen hidden-screen">
+  <div class="pin-content">
+    <p class="eyebrow">one little secret&hellip;</p>
+    <h2 class="pin-title">Only You Know<br />The Way In.</h2>
+
+    <div class="pin-dots" id="pin-dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <p id="pin-message" class="pin-message">&nbsp;</p>
+
+    <div class="keypad" id="keypad">
+      <button class="key" data-key="1">1</button>
+      <button class="key" data-key="2">2</button>
+      <button class="key" data-key="3">3</button>
+      <button class="key" data-key="4">4</button>
+      <button class="key" data-key="5">5</button>
+      <button class="key" data-key="6">6</button>
+      <button class="key" data-key="7">7</button>
+      <button class="key" data-key="8">8</button>
+      <button class="key" data-key="9">9</button>
+      <button class="key key-ghost" disabled aria-hidden="true"></button>
+      <button class="key" data-key="0">0</button>
+      <button class="key key-del" data-key="del">⌫</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- 3. UNLOCK TRANSITION OVERLAY  -->
+<!-- ============================= -->
+<div id="unlock-overlay" class="unlock-overlay">
+  <div class="unlock-heart">❤</div>
+  <div class="unlock-flash"></div>
+</div>
+
+<!-- ============================= -->
+<!-- MAIN BIRTHDAY SITE (locked)   -->
+<!-- ============================= -->
+<main id="main-site" class="hidden-site">
+
+  <!-- HERO REVEAL -->
+  <section class="section hero-reveal" data-reveal-root>
+    <div class="hero-glow"></div>
+    <p class="eyebrow fade-up">today is not just another day</p>
+    <h1 class="hero-title fade-up">Happy Birthday,<br />My Everything <span class="heart-accent">❤</span></h1>
+    <p class="hero-line fade-up">Today isn&rsquo;t just another day&hellip;</p>
+    <p class="hero-line fade-up">It&rsquo;s the day someone incredibly special came into this world.</p>
+    <div class="scroll-cue fade-up">
+      <span></span>
+      keep going
+    </div>
+  </section>
+
+  <!-- MAIN LOVE MESSAGE -->
+  <section class="section love-message" data-reveal-root>
+    <h2 class="stagger-title fade-up">You&rsquo;re My Everything</h2>
+    <div class="love-lines">
+      <p class="fade-up">My favorite person.</p>
+      <p class="fade-up">My safest place.</p>
+      <p class="fade-up">My happiest memories.</p>
+      <p class="fade-up">My best friend.</p>
+      <p cl="fade-up">My man</p>
+    </div>
+    <p class="signature-name fade-up"> My Cherry <span class="heart-accent">❤</span></p>
+    <p class="signature-sub fade-up">Love you chlo.</p>
+  </section>
+
+  <!-- 3D CAKE -->
+  <section class="section cake-section" data-reveal-root>
+    <p class="eyebrow fade-up">make a wish</p>
+    <h2 class="fade-up">Blow The Candles Out</h2>
+
+    <div class="cake-stage fade-up">
+      <div class="cake-3d" id="cake">
+        <div class="candle-flame" id="flame-1"><span></span></div>
+        <div class="candle-flame" id="flame-2"><span></span></div>
+        <div class="candle-flame" id="flame-3"><span></span></div>
+
+        <div class="candle c1"></div>
+        <div class="candle c2"></div>
+        <div class="candle c3"></div>
+
+        <div class="cake-layer layer-top">
+          <div class="icing-drip"></div>
+          <div class="berry b1"></div>
+          <div class="berry b2"></div>
+          <div class="berry b3"></div>
+          <div class="cake-flower f1"></div>
+          <div class="cake-flower f2"></div>
+        </div>
+        <div class="cake-layer layer-mid"></div>
+        <div class="cake-layer layer-base"></div>
+        <div class="cake-shadow"></div>
+      </div>
+    </div>
+
+    <button id="wish-btn" class="glass-btn fade-up"><span>Make a Wish</span><span class="spark">✨</span></button>
+    <p id="wish-result" class="wish-result">Your wish is already coming true. ❤</p>
+  </section>
+
+  <!-- EMOTIONAL MESSAGE -->
+  <section class="section letter-section" data-reveal-root>
+    <div class="glass-card fade-up">
+      <h2 class="eyebrow-title">A Little Something From My Heart</h2>
+      <p class="typewriter-line" data-text="enna solluradhu therla ma enku.. en unna evolo luv pannuren therla..nee enkukadi en evolo efforts podura therla.."></p>
+      <p class="typewriter-line" data-text="idhu epdi start achi ipo epdi pogudhu yellame oru kutti reminder panniko maa...idhu mari namaba marriage apovum peasanum kandipa yellarumey ivaga still one na irukagala un pakkanum..."></p>
+      <p class="typewriter-line" data-text="neraiya assa iruku ne neraiya achive pannunaum..uga v2la solluramarila iruka kudathu yellathaium nala respect pannunaum...discipline iruka kathuko..nala friendship
+      maintain pannu..yellaru kudaium peasu ma nalla..jollyya iru romba think pannathaa..papa kuda sanda podatha main...avala nala nalla  pathuko pls chinna pulla unnanambitaa apo pathuko epdi pathukanum un...and whis you happy brithday chlo...luv u lots...idha luv idhaye mari irukum la maradhu laa?"></p>
+      <p class="typewriter-line" data-text="nala padi ma next year promise pannirukiga nambagam irukulaa avolthaa chlo....love youuuuuuuuu...Thank you for every memory, every laugh, every stupid conversation and every moment that became something I&rsquo;ll always remember."></p>
+      <h3 class="letter-close fade-up">Happy Birthday, My Everything ❤</h3>
+      <p class="letter-signoff fade-up">       love you lots. 🌹</p>
+    </div>
+  </section>
+
+  <!-- MEMORY SLIDER -->
+  <section class="section memory-section" data-reveal-root>
+    <p class="eyebrow fade-up">a few favorites</p>
+    <h2 class="fade-up">Our Little Memory Book</h2>
+
+    <div class="slider" id="slider">
+      <div class="slider-track" id="slider-track">
+        <figure class="slide active" data-index="0">
+          <img src="assets/images/img3.jpeg" style="width: 100%; height: 100%; object-fit: cover">
+          <figcaption>the friendship that started it all</figcaption>
+        </figure>
+         <figure class="slide active" data-index="1">
+          <img src="assets/images/img.jpeg" style="width: 100%; height: 100%; object-fit: cover">
+          <figcaption>next>>></figcaption>
+        </figure>
+         <figure class="slide active" data-index="2">
+          <img src="assets/images/img4.jpeg" style="width: 100%; height: 100%; object-fit: cover">
+          <figcaption>Fav pic </figcaption>
+        </figure>
+         <figure class="slide active" data-index="3">
+          <img src="assets/images/img5.jpeg" style="width: 100%; height: 100%; object-fit: cover">
+          <figcaption>Trust me never leve you</figcaption>
+        </figure>
+      </div>
+
+      <button id="slider-next" class="slider-arrow" aria-label="Next memory">></button>
+
+      <div class="slider-footer">
+        <div class="slider-dots" id="slider-dots">
+          <span class="s-dot active"></span>
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+        </div>
+        <div class="slider-count"><span id="slide-current">1</span> / 4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE LOVE MESSAGES -->
+  <section class="section mini-messages" data-reveal-root>
+    <div class="mini-msg fade-up">
+      <h3>You Know What?</h3>
+      <p>Out of all the people in this world&hellip;<br />I&rsquo;m really glad life gave me you.</p>
+    </div>
+    <div class="mini-msg fade-up">
+      <h3>Thank You</h3>
+      <p>Thank you for staying. Thank you for listening.<br />Thank you for understanding.<br />Thank you for making ordinary days feel special.</p>
+    </div>
+    <div class="mini-msg fade-up">
+      <h3>My Favorite Person</h3>
+      <p>You&rsquo;re the person I can laugh with about absolutely nothing&hellip;<br />and somehow those become my favorite conversations.</p>
+    </div>
+    <div class="mini-msg fade-up">
+      <h3>Always</h3>
+      <p>No matter how much life changes&hellip;<br />I hope one thing never changes:<br />our friendship.</p>
+    </div>
+  </section>
+
+  <!-- FULL SCREEN PHRASE REVEAL -->
+  <section class="section phrase-reveal" data-reveal-root id="phrase-reveal">
+    <div class="phrase-stage" id="phrase-stage">
+      <span class="phrase" data-phrase>You are&hellip;</span>
+      <span class="phrase" data-phrase>My Everything ❤</span>
+      <span class="phrase" data-phrase>My Favorite Person 🌹</span>
+      <span class="phrase" data-phrase>My Best Friend 💕</span>
+      <span class="phrase" data-phrase>My Cherry 🍒</span>
+      <span class="phrase" data-phrase>Love You Lots ❤</span>
+    </div>
+  </section>
+
+  <!-- FINAL SURPRISE -->
+  <section class="section finale-section" data-reveal-root>
+    <div class="finale-rose" aria-hidden="true">
+      <div class="rose-petal p1"></div>
+      <div class="rose-petal p2"></div>
+      <div class="rose-petal p3"></div>
+      <div class="rose-petal p4"></div>
+      <div class="rose-petal p5"></div>
+      <div class="rose-center"></div>
+    </div>
+
+    <div class="finale-lines">
+      <p class="finale-line fade-up">One Last Thing&hellip;</p>
+      <p class="finale-line fade-up">Thank you for being my best friend.</p>
+      <p class="finale-line fade-up">Thank you for being my person.</p>
+      <p class="finale-line fade-up">Thank you for being YOU.</p>
+      <div class="finale-heart fade-up">❤</div>
+      <h2 class="finale-title fade-up">Happy Birthday ❤</h2>
+      <h2 class="finale-title fade-up">My Everything.</h2>
+      <h2 class="finale-title fade-up">My Cherry 🍒</h2>
+      <h2 class="finale-title fade-up">Love You Lots ❤🌹</h2>
+      <p class="finale-outro fade-up">Here&rsquo;s to many more beautiful memories together.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- MUSIC TOGGLE -->
+<button id="music-toggle" class="music-toggle" aria-label="Toggle background music">🎵</button>
+<audio id="bg-music" loop preload="none">
+  <source src="assets/music/audio.mp4" type="audio/mpeg" />
+</audio>
+
+<script src="js/script.js"></script>
+</body>
+</html>
